@@ -1,14 +1,18 @@
 //Root element
 const body = document.querySelector("body")
-console.log(body)
 
 const wrapper = document.createElement("div")
 wrapper.className = "wrapper"
 body.appendChild(wrapper)
 
-const renderDiv = document.createElement("div")
-renderDiv.className = "renderDiv"
-wrapper.appendChild(renderDiv)
+//Nav-bar
+const nav = document.createElement("nav")
+nav.className = "nav"
+body.appendChild(nav)
+
+const productContainer = document.createElement("div")
+productContainer.className = "productContainer"
+wrapper.appendChild(productContainer)
 
 //Skapar upp en produkt mall
 const product = document.createElement("div")
@@ -20,6 +24,7 @@ product.appendChild(imgWrapper)
 
 const img = document.createElement("img")
 img.className = "productImgWrapper__img"
+img.src = "https://source.unsplash.com/1000x900/?food, purple"
 imgWrapper.appendChild(img)
 
 const name = document.createElement("h1")
@@ -36,7 +41,7 @@ product.appendChild(price)
 const countContainer = document.createElement("div")
 countContainer.className = "countContainer"
 product.appendChild(countContainer)
-const minus = document.createElement("div")
+const minus = document.createElement("button")
 minus.className = "countContainer__minus"
 minus.textContent = "-"
 countContainer.appendChild(minus)
@@ -44,13 +49,17 @@ const count = document.createElement("p")
 count.className = "countContainer__count"
 count.textContent = "5 st."
 countContainer.appendChild(count)
-const plus = document.createElement("div")
+const plus = document.createElement("button")
 plus.className = "countContainer__plus"
 plus.textContent = "+"
 countContainer.appendChild(plus)
+const addBtn = document.createElement("button")
+addBtn.className = "addBtn"
+addBtn.textContent = "Lägg till i varukorg"
+product.appendChild(addBtn)
 
 //Clonar produkter
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 12; i++) {
     const cloneProduct = product.cloneNode(true)
-    renderDiv.appendChild(cloneProduct)
+    productContainer.appendChild(cloneProduct)
 }

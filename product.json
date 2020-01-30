@@ -50,6 +50,16 @@
                 "img": "https://picsum.photos/200/300",
                 "name": "Produkt 10",
                 "price": "9.99€"
+            },
+            "id11": {
+                "img": "https://picsum.photos/200/300",
+                "name": "Produkt 11",
+                "price": "19.99€"
+            },
+            "id12": {
+                "img": "https://picsum.photos/200/300",
+                "name": "Produkt 12",
+                "price": "92.99€"
             }
         }
     ]
