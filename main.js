@@ -32,6 +32,15 @@ price.className = "productPrice"
 price.textContent = "99.9€"
 product.appendChild(price)
 
+const countContainer = document.createElement("div")
+countContainer.className = "countContainer"
+const minus = document.createElement("div")
+minus.className = "count__minus"
+const count = document.createElement("p")
+count.className = "count"
+const plus = document.createElement("div")
+plus.className = "count__plus"
+
 //Clonar produkter
 for (let i = 0; i < 10; i++) {
     const cloneProduct = product.cloneNode(true)
