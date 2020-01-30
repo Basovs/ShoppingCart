@@ -12,7 +12,7 @@ wrapper.appendChild(renderDiv)
 
 //Skapar upp en produkt mall
 const product = document.createElement("div")
-product.className = "productDiv"
+product.className = "product"
 
 const imgWrapper = document.createElement("div")
 imgWrapper.className = "productImgWrapper"
@@ -32,14 +32,22 @@ price.className = "productPrice"
 price.textContent = "99.9€"
 product.appendChild(price)
 
+//Count picker template
 const countContainer = document.createElement("div")
 countContainer.className = "countContainer"
+product.appendChild(countContainer)
 const minus = document.createElement("div")
-minus.className = "count__minus"
+minus.className = "countContainer__minus"
+minus.textContent = "-"
+countContainer.appendChild(minus)
 const count = document.createElement("p")
-count.className = "count"
+count.className = "countContainer__count"
+count.textContent = "5 st."
+countContainer.appendChild(count)
 const plus = document.createElement("div")
-plus.className = "count__plus"
+plus.className = "countContainer__plus"
+plus.textContent = "+"
+countContainer.appendChild(plus)
 
 //Clonar produkter
 for (let i = 0; i < 10; i++) {
