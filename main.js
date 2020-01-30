@@ -8,7 +8,7 @@ body.appendChild(wrapper)
 //Nav-bar
 const nav = document.createElement("nav")
 nav.className = "nav"
-body.appendChild(nav)
+body.prepend(nav)
 
 const productContainer = document.createElement("div")
 productContainer.className = "productContainer"
