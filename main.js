@@ -1,23 +1,39 @@
-//Cach root
-const renderDiv = document.querySelector("#renderDiv")
+//Root element
+const body = document.querySelector("body")
+console.log(body)
+
+const wrapper = document.createElement("div")
+wrapper.className = "wrapper"
+body.appendChild(wrapper)
+
+const renderDiv = document.createElement("div")
+renderDiv.className = "renderDiv"
+wrapper.appendChild(renderDiv)
 
 //Skapar upp en produkt mall
-const newProduct = document.createElement("div")
-newProduct.className = "productDiv"
+const product = document.createElement("div")
+product.className = "productDiv"
 
-const newImg = document.createElement("img")
-newImg.className = "productImg"
-newProduct.appendChild(newImg)
+const imgWrapper = document.createElement("div")
+imgWrapper.className = "productImgWrapper"
+product.appendChild(imgWrapper)
 
-const newName = document.createElement("h1")
-newName.className = "productName"
-newProduct.appendChild(newName)
+const img = document.createElement("img")
+img.className = "productImgWrapper__img"
+imgWrapper.appendChild(img)
 
-const newPrice = document.createElement("h3")
-newPrice.className = "productPrice"
-newProduct.appendChild(newPrice)
+const name = document.createElement("h1")
+name.className = "productName"
+name.textContent = "Name"
+product.appendChild(name)
 
+const price = document.createElement("h3")
+price.className = "productPrice"
+price.textContent = "99.9€"
+product.appendChild(price)
+
+//Clonar produkter
 for (let i = 0; i < 10; i++) {
-    const product = newProduct.cloneNode(true)
-    renderDiv.appendChild(product)
+    const cloneProduct = product.cloneNode(true)
+    renderDiv.appendChild(cloneProduct)
 }
