@@ -33,7 +33,7 @@ body {
   -webkit-box-shadow: 8px 8px 6px 0px rgba(0, 0, 0, 0.15), -8px -8px 6px 0px rgba(255, 255, 255, 0.6);
           box-shadow: 8px 8px 6px 0px rgba(0, 0, 0, 0.15), -8px -8px 6px 0px rgba(255, 255, 255, 0.6);
   border-radius: 20px;
-  margin: 30px auto;
+  margin: 0 auto;
 }
 
 .nav .cartBtn {
@@ -46,6 +46,34 @@ body {
   border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
+}
+
+.shoppingCart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  block-size: 100vh;
+  inline-size: 100vw;
+  background-color: #00000090;
+}
+
+.shoppingCart .shoppingCartContainer {
+  inline-size: 50%;
+  block-size: 90%;
+  background-color: #f0f0f0;
+  border-radius: 50px;
+  -webkit-box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.3), inset -6px -6px 6px 0px white;
+          box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.3), inset -6px -6px 6px 0px white;
 }
 
 .productContainer {
@@ -88,6 +116,7 @@ body {
   border-radius: 30px;
   overflow: hidden;
   margin: 5% 0 0 0;
+  padding: 14px;
   -webkit-box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.15), inset -6px -6px 6px 0px rgba(255, 255, 255, 0.6);
           box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.15), inset -6px -6px 6px 0px rgba(255, 255, 255, 0.6);
 }
@@ -98,6 +127,7 @@ body {
   inline-size: 100%;
   block-size: 100%;
   background-color: #f0f0f0;
+  border-radius: 20px;
 }
 
 .productName {
