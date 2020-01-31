@@ -58,10 +58,20 @@ body {
 }
 .productContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     row-gap: 50px;
     justify-items: center;
     padding: 30px;
+}
+@media screen and (min-width: 800px) {
+    .productContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 1150px) {
+    .productContainer {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 .product {
     display: flex;
