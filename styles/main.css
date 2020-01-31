@@ -111,8 +111,8 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-inline-size: 320px;
-  max-inline-size: 340px;
+  min-inline-size: 340px;
+  max-inline-size: 360px;
   background-color: #f0f0f0;
   border-radius: 40px;
   overflow: hidden;
