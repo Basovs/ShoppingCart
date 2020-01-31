@@ -14,8 +14,27 @@ body {
     max-inline-size: 1350px;
 }
 .nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     block-size: 70px;
-    background-color: #1f30ff;
+    background-color: #f0f0f0;
+    inline-size: 90%;
+    box-shadow: 8px 8px 6px 0px rgba(0, 0, 0, 0.15),
+        -8px -8px 6px 0px rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    margin: 30px auto;
+    .cartBtn {
+        block-size: 44px;
+        padding: 0 40px;
+        margin: 0 20px 0 0;
+        border: none;
+        box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.15),
+            -6px -6px 6px 0px rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+    }
 }
 .productContainer {
     display: grid;
@@ -34,8 +53,8 @@ body {
     background-color: #f0f0f0;
     border-radius: 40px;
     overflow: hidden;
-    box-shadow: 8px 8px 6px 0px rgba(0, 0, 0, 0.1),
-        -8px -8px 6px 0px rgba(255, 255, 255, 0.5);
+    box-shadow: 8px 8px 6px 0px rgba(0, 0, 0, 0.15),
+        -8px -8px 6px 0px rgba(255, 255, 255, 0.6);
 }
 .productImgWrapper {
     inline-size: 90%;
@@ -45,8 +64,8 @@ body {
     border-radius: 30px;
     overflow: hidden;
     margin: 5% 0 0 0;
-    box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.1),
-        inset -6px -6px 6px 0px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.15),
+        inset -6px -6px 6px 0px rgba(255, 255, 255, 0.6);
     &__img {
         object-fit: cover;
         inline-size: 100%;
@@ -72,22 +91,25 @@ body {
     align-self: center;
     border-radius: 20px;
     margin: 0 0 10% 0;
-    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.1),
-        -6px -6px 6px 0px rgba(255, 255, 255, 0.5);
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.15),
+        -6px -6px 6px 0px rgba(255, 255, 255, 0.6);
     &__minus {
         display: flex;
         justify-content: center;
         align-items: center;
-        block-size: 46 px;
+        block-size: 46px;
         inline-size: 46px;
         background-color: #f0f0f0;
         border-radius: 100%;
-        box-shadow: 6px 6px 4px 0px rgba(0, 0, 0, 0.1),
-            -6px -6px 4px 0px rgba(255, 255, 255, 0.5);
+        box-shadow: 6px 6px 4px 0px rgba(0, 0, 0, 0.15),
+            -6px -6px 4px 0px rgba(255, 255, 255, 0.6);
         font-size: 30px;
         font-weight: 700;
         cursor: pointer;
         border: none;
+    }
+    &__count {
+        font-weight: 700;
     }
     &__plus {
         display: flex;
@@ -97,8 +119,8 @@ body {
         inline-size: 46px;
         background-color: #f0f0f0;
         border-radius: 100%;
-        box-shadow: 6px 6px 4px 0px rgba(0, 0, 0, 0.1),
-            -6px -6px 4px 0px rgba(255, 255, 255, 0.5);
+        box-shadow: 6px 6px 4px 0px rgba(0, 0, 0, 0.15),
+            -6px -6px 4px 0px rgba(255, 255, 255, 0.6);
         font-size: 30px;
         font-weight: 700;
         cursor: pointer;
@@ -109,13 +131,12 @@ body {
     align-self: center;
     inline-size: 80%;
     block-size: 70px;
-    background-color: #1f7eff;
+    background-color: #f0f0f0;
     border: none;
     border-radius: 20px;
     margin: 0 0 10% 0;
-    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.2),
-        -6px -6px 6px 0px rgba(255, 255, 255, 1);
-    color: #ffffff;
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.15),
+        -6px -6px 6px 0px rgba(255, 255, 255, 0.6);
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;

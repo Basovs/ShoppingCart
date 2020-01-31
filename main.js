@@ -9,6 +9,10 @@ body.appendChild(wrapper)
 const nav = document.createElement("nav")
 nav.className = "nav"
 body.prepend(nav)
+const cart = document.createElement("button")
+cart.className = "cartBtn"
+cart.textContent = "Varukorg"
+nav.appendChild(cart)
 
 const productContainer = document.createElement("div")
 productContainer.className = "productContainer"
