@@ -77,3 +77,12 @@ for (let i = 0; i < 12; i++) {
     const cloneProduct = product.cloneNode(true)
     productContainer.appendChild(cloneProduct)
 }
+
+//JSON handler
+fetch("product.json")
+    .then(response => {
+        return response.json()
+    })
+    .then(myJson => {
+        console.log(myJson)
+    })
