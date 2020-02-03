@@ -28,7 +28,7 @@ const productContainer = document.createElement("div")
 productContainer.className = "productContainer"
 wrapper.appendChild(productContainer)
 
-//Skapar upp en produkt mall
+//Product template
 const product = document.createElement("div")
 product.className = "product"
 
