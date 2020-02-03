@@ -9,6 +9,7 @@ body {
     font-weight: 400;
     font-style: normal;
     position: relative;
+    padding: 50px 0;
 }
 .wrapper {
     max-inline-size: 1350px;
@@ -62,7 +63,7 @@ body {
     grid-template-columns: 1fr;
     row-gap: 50px;
     justify-items: center;
-    padding: 30px;
+    padding: 50px 0;
 }
 @media screen and (min-width: 800px) {
     .productContainer {
