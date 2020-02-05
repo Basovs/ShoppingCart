@@ -36,10 +36,38 @@ const productInCartImgWrapperImg = document.createElement("img")
 productInCartImgWrapperImg.className = "productInCartImgWrapperImg"
 productInCartImgWrapper.appendChild(productInCartImgWrapperImg)
 
+const productInCartName = document.createElement("h3")
+productInCartName.className = "productInCartName"
+productInCartName.textContent = "Name"
+productInCart.appendChild(productInCartName)
+
 const countBtn = document.createElement("div")
+countBtn.className = "countBtn"
+productInCart.appendChild(countBtn)
+
+const countBtnMinus = document.createElement("button")
+countBtnMinus.className = "countBtnMinus"
+countBtnMinus.textContent = "-"
+countBtn.appendChild(countBtnMinus)
+
+const countBtnCount = document.createElement("p")
+countBtnCount.className = "countBtnCount"
+countBtnCount.textContent = "5st."
+countBtn.appendChild(countBtnCount)
+
+const countBtnPlus = document.createElement("button")
+countBtnPlus.className = "countBtnPlus"
+countBtnPlus.textContent = "+"
+countBtn.appendChild(countBtnPlus)
+
+const totalProductprice = document.createElement("p")
+totalProductprice.className = "totalProductprice"
+totalProductprice.textContent = "total pris"
+productInCart.appendChild(totalProductprice)
 
 const deleteBtn = document.createElement("button")
 deleteBtn.className = "deleteBtn"
+deleteBtn.textContent = "X"
 productInCart.appendChild(deleteBtn)
 
 //Product container
@@ -98,7 +126,7 @@ for (let i = 0; i < 12; i++) {
 }
 const productsImg = document.querySelectorAll(".product img")
 const productsName = document.querySelectorAll(".product h1")
-const productsPrice= document.querySelectorAll(".product h3")
+const productsPrice = document.querySelectorAll(".product h3")
 //JSON handler
 fetch("product.json")
     .then(response => {
