@@ -40,7 +40,7 @@ body {
 }
 .shoppingCart {
     display: flex;
-    // display: none;
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -107,7 +107,7 @@ body {
     box-shadow: 8px 8px 6px 0px rgba(0, 0, 0, 0.15),
         -8px -8px 6px 0px rgba(255, 255, 255, 0.6);
 }
-.imgWrapper {
+.productImgWrapper {
     inline-size: 90%;
     block-size: 40%;
     background-color: #f0f0f0;
