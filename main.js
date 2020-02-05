@@ -23,6 +23,25 @@ const shoppigCartConainer = document.createElement("div")
 shoppigCartConainer.className = "shoppingCartContainer"
 shoppigCart.appendChild(shoppigCartConainer)
 
+// Product template in cart
+const productInCart = document.createElement("div")
+productInCart.className = "productInCart"
+shoppigCartConainer.appendChild(productInCart)
+
+const productInCartImgWrapper = document.createElement("div")
+productInCartImgWrapper.className = "productInCartImgWrapper"
+productInCart.appendChild(productInCartImgWrapper)
+
+const productInCartImgWrapperImg = document.createElement("img")
+productInCartImgWrapperImg.className = "productInCartImgWrapperImg"
+productInCartImgWrapper.appendChild(productInCartImgWrapperImg)
+
+const countBtn = document.createElement("div")
+
+const deleteBtn = document.createElement("button")
+deleteBtn.className = "deleteBtn"
+productInCart.appendChild(deleteBtn)
+
 //Product container
 const productContainer = document.createElement("div")
 productContainer.className = "productContainer"

@@ -54,7 +54,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -73,9 +72,32 @@ body {
   inline-size: 50%;
   block-size: 90%;
   background-color: #f0f0f0;
-  border-radius: 50px;
-  -webkit-box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.3), inset -6px -6px 6px 0px white;
-          box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.3), inset -6px -6px 6px 0px white;
+  padding: 20px;
+}
+
+.shoppingCart .shoppingCartContainer .productInCart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  block-size: 100px;
+  background-color: #ffffff;
+}
+
+.shoppingCart .shoppingCartContainer .productInCart .productInCartImgWrapper {
+  inline-size: 20%;
+  background-color: grey;
+}
+
+.shoppingCart .shoppingCartContainer .productInCart .deleteBtn {
+  inline-size: 13%;
+  block-size: 100%;
+  background-color: red;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .productContainer {
@@ -122,7 +144,7 @@ body {
           box-shadow: 8px 8px 6px 0px rgba(0, 0, 0, 0.15), -8px -8px 6px 0px rgba(255, 255, 255, 0.6);
 }
 
-.productImgWrapper {
+.imgWrapper {
   inline-size: 90%;
   block-size: 40%;
   background-color: #f0f0f0;
@@ -137,7 +159,7 @@ body {
           box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.15), inset -6px -6px 6px 0px rgba(255, 255, 255, 0.6);
 }
 
-.productImgWrapper__img {
+.imgWrapper__img {
   -o-object-fit: cover;
      object-fit: cover;
   inline-size: 100%;
