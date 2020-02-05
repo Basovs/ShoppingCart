@@ -62,7 +62,7 @@ imgWrapper.appendChild(img)
 
 const name = document.createElement("h1")
 name.className = "productName"
-name.textContent = "Name"
+//name.textContent = "Name"
 product.appendChild(name)
 
 const price = document.createElement("h3")
@@ -96,7 +96,9 @@ for (let i = 0; i < 12; i++) {
     const cloneProduct = product.cloneNode(true)
     productContainer.appendChild(cloneProduct)
 }
-const products = document.querySelectorAll(".product img")
+const productsImg = document.querySelectorAll(".product img")
+const productsName = document.querySelectorAll(".product h1")
+const productsPrice= document.querySelectorAll(".product h3")
 //JSON handler
 fetch("product.json")
     .then(response => {
@@ -104,7 +106,11 @@ fetch("product.json")
     })
     .then(myJson => {
         for (let i = 0; i < myJson.products.length; i++) {
-            console.log(myJson.products[i])
-            products[i].src = myJson.products[i].img
+            //console.log(myJson.products[i].name)
+            productsImg[i].src = myJson.products[i].img
+            //console.log(productsName)
+            productsName[i].textContent = myJson.products[i].name
+            //console.log(productsPrice)
+            productsPrice[i].textContent = myJson.products[i].price
         }
     })
