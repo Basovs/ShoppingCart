@@ -54,7 +54,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -73,7 +72,11 @@ body {
   inline-size: 50%;
   block-size: 90%;
   background-color: #f0f0f0;
-  padding: 20px;
+  border: 15px solid #f0f0f0;
+  padding: 30px;
+  border-radius: 50px;
+  -webkit-box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.3), inset -6px -6px 6px 0px white, 6px 6px 6px 0px rgba(0, 0, 0, 0.3), -6px -6px 6px 0px rgba(255, 255, 255, 0.1);
+          box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.3), inset -6px -6px 6px 0px white, 6px 6px 6px 0px rgba(0, 0, 0, 0.3), -6px -6px 6px 0px rgba(255, 255, 255, 0.1);
 }
 
 .shoppingCart .shoppingCartContainer .productInCart {
@@ -83,13 +86,51 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   block-size: 100px;
-  background-color: #ffffff;
+  background-color: #f0f0f0;
+  border-radius: 30px;
+  overflow: hidden;
+  -webkit-box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.15), -8px -8px 8px 0px rgba(255, 255, 255, 0.6);
+          box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.15), -8px -8px 8px 0px rgba(255, 255, 255, 0.6);
 }
 
 .shoppingCart .shoppingCartContainer .productInCart .productInCartImgWrapper {
   inline-size: 20%;
+  block-size: 100%;
   background-color: grey;
+}
+
+.shoppingCart .shoppingCartContainer .productInCart .productInCartImgWrapper .productInCartImgWrapperImg {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.shoppingCart .shoppingCartContainer .productInCart .countBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  inline-size: 30%;
+}
+
+.shoppingCart .shoppingCartContainer .productInCart .countBtn .countBtnMinus,
+.shoppingCart .shoppingCartContainer .productInCart .countBtn .countBtnPlus {
+  inline-size: 50px;
+  block-size: 50px;
+  border: none;
+  border-radius: 50px;
+  font-size: 36px;
+  cursor: pointer;
+  -webkit-box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.15), -8px -8px 8px 0px rgba(255, 255, 255, 0.6);
+          box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.15), -8px -8px 8px 0px rgba(255, 255, 255, 0.6);
 }
 
 .shoppingCart .shoppingCartContainer .productInCart .deleteBtn {
@@ -99,6 +140,7 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+  font-size: 30px;
 }
 
 .productContainer {

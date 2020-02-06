@@ -39,8 +39,13 @@ body {
     }
 }
 .shoppingCart {
+<<<<<<< HEAD
     display: flex;      
     display: none;
+=======
+    display: flex;
+    // display: none;
+>>>>>>> fa4d190f278994ef0a4cc2e71046108c3bdc6ca1
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -53,18 +58,49 @@ body {
         inline-size: 50%;
         block-size: 90%;
         background-color: #f0f0f0;
-        padding: 20px;
-        // border-radius: 50px;
-        // box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.3),
-        //     inset -6px -6px 6px 0px rgba(255, 255, 255, 1);
+        border: 15px solid #f0f0f0;
+        padding: 30px;
+        border-radius: 50px;
+        box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.3),
+            inset -6px -6px 6px 0px rgba(255, 255, 255, 1),
+            6px 6px 6px 0px rgba(0, 0, 0, 0.3),
+            -6px -6px 6px 0px rgba(255, 255, 255, 0.1);
         .productInCart {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             block-size: 100px;
-            background-color: #ffffff;
+            // inline-size: 70%;
+            background-color: #f0f0f0;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.15),
+                -8px -8px 8px 0px rgba(255, 255, 255, 0.6);
             .productInCartImgWrapper {
                 inline-size: 20%;
+                block-size: 100%;
                 background-color: grey;
+                .productInCartImgWrapperImg {
+                    block-size: 100%;
+                    inline-size: 100%;
+                }
+            }
+            .countBtn {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                inline-size: 30%;
+                .countBtnMinus,
+                .countBtnPlus {
+                    inline-size: 50px;
+                    block-size: 50px;
+                    border: none;
+                    border-radius: 50px;
+                    font-size: 36px;
+                    cursor: pointer;
+                    box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.15),
+                        -8px -8px 8px 0px rgba(255, 255, 255, 0.6);
+                }
             }
             .deleteBtn {
                 inline-size: 13%;
@@ -73,6 +109,7 @@ body {
                 border: none;
                 outline: none;
                 cursor: pointer;
+                font-size: 30px;
             }
         }
     }
