@@ -65,13 +65,14 @@ countBtn.appendChild(countBtnPlus)
 //Logiken
 countCart = 0
 countBtnPlus.addEventListener("click", function() {
+    console.log(countCart)
     return (countBtnCount.textContent = countCart += 1)
 })
-if (countCart > 0) {
-    countBtnMinus.addEventListener("click", function() {
-        return (countBtnCount.textContent = countCart -= 1)
-    })
-}
+console.log(countCart)
+countBtnMinus.addEventListener("click", function() {
+    console.log(countCart)
+    return (countBtnCount.textContent = countCart -= 1)
+})
 
 const totalProductprice = document.createElement("p")
 totalProductprice.className = "totalProductprice"
@@ -120,7 +121,7 @@ minus.className = "countContainer__minus"
 minus.textContent = "-"
 countContainer.appendChild(minus)
 let count = document.createElement("p")
-let counter = 0;
+let counter = 0
 count.className = "countContainer__count"
 count.textContent = counter + " st."
 countContainer.appendChild(count)
@@ -133,7 +134,7 @@ function demo() {
     mm = "kalle"
     console.log(mm)
 }
-demo();
+demo()
 console.log(mm)
 /*$(document).ready(function(){
   $(".countContainer__minus").click(function(){

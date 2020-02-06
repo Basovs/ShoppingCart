@@ -54,7 +54,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -111,6 +110,8 @@ body {
 .shoppingCart .shoppingCartContainer .productInCart .productInCartImgWrapper .productInCartImgWrapperImg {
   block-size: 100%;
   inline-size: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .shoppingCart .shoppingCartContainer .productInCart .countBtn {
