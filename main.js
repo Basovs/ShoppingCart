@@ -78,14 +78,32 @@ const minus = document.createElement("button")
 minus.className = "countContainer__minus"
 minus.textContent = "-"
 countContainer.appendChild(minus)
-const count = document.createElement("p")
+let count = document.createElement("p")
+let counter = 0;
 count.className = "countContainer__count"
-count.textContent = "5 st."
+count.textContent = counter + " st."
 countContainer.appendChild(count)
 const plus = document.createElement("button")
 plus.className = "countContainer__plus"
 plus.textContent = "+"
 countContainer.appendChild(plus)
+document.addEventListener
+function demo() {
+    mm = "kalle"
+    console.log(mm)
+}
+demo();
+console.log(mm)
+/*$(document).ready(function(){
+  $(".countContainer__minus").click(function(){
+    counter --;
+    alert(counter);
+  });
+  $(".countContainer__plus").click(function(){
+    counter ++;
+    alert(counter);
+  });
+});*/
 const addBtn = document.createElement("button")
 addBtn.className = "addBtn"
 addBtn.textContent = "Lägg till i varukorg"

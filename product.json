@@ -4,49 +4,49 @@
             "id": 1,
             "img": "https://images.unsplash.com/photo-1562849271-4afe5204bc60?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000",
             "name": "Produkt 1",
-            "price": "9.99€"
+            "price": "0.99€"
         },
         {
             "id": 2,
             "img": "https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000",
             "name": "Produkt 2",
-            "price": "9.99€"
+            "price": "4.99€"
         },
         {
             "id": 3,
             "img": "https://images.unsplash.com/photo-1518476381266-33596bddffc0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000",
             "name": "Produkt 3",
-            "price": "9.99€"
+            "price": "19.59€"
         },
         {
             "id": 4,
             "img": "https://images.unsplash.com/photo-1572014265425-97bb36dc091c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000",
             "name": "Produkt 4",
-            "price": "9.99€"
+            "price": "6.99€"
         },
         {
             "id": 5,
             "img": "https://images.unsplash.com/photo-1575641598388-7d722064efb6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000",
             "name": "Produkt 5",
-            "price": "9.99€"
+            "price": "8.99€"
         },
         {
             "id": 6,
             "img": "https://images.unsplash.com/photo-1457296898342-cdd24585d095?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000",
             "name": "Produkt 6",
-            "price": "9.99€"
+            "price": "7.99€"
         },
         {
             "id": 7,
             "img": "https://images.unsplash.com/photo-1572256729103-7377378f4ed8?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000",
             "name": "Produkt 7",
-            "price": "9.99€"
+            "price": "11.99€"
         },
         {
             "id": 8,
             "img": "https://images.unsplash.com/photo-1550461716-dbf266b2a8a7?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000",
             "name": "Produkt 8",
-            "price": "9.99€"
+            "price": "10.99€"
         },
         {
             "id": 9,
