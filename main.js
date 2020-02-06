@@ -34,6 +34,8 @@ productInCart.appendChild(productInCartImgWrapper)
 
 const productInCartImgWrapperImg = document.createElement("img")
 productInCartImgWrapperImg.className = "productInCartImgWrapperImg"
+productInCartImgWrapperImg.src =
+    "https://images.unsplash.com/photo-1566719835718-56b15f742ae0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000"
 productInCartImgWrapper.appendChild(productInCartImgWrapperImg)
 
 const productInCartName = document.createElement("h3")
@@ -52,13 +54,24 @@ countBtn.appendChild(countBtnMinus)
 
 const countBtnCount = document.createElement("p")
 countBtnCount.className = "countBtnCount"
-countBtnCount.textContent = "5st."
+countBtnCount.textContent = 0
 countBtn.appendChild(countBtnCount)
 
 const countBtnPlus = document.createElement("button")
 countBtnPlus.className = "countBtnPlus"
 countBtnPlus.textContent = "+"
 countBtn.appendChild(countBtnPlus)
+
+//Logiken
+countCart = 0
+countBtnPlus.addEventListener("click", function() {
+    return (countBtnCount.textContent = countCart += 1)
+})
+if (countCart > 0) {
+    countBtnMinus.addEventListener("click", function() {
+        return (countBtnCount.textContent = countCart -= 1)
+    })
+}
 
 const totalProductprice = document.createElement("p")
 totalProductprice.className = "totalProductprice"

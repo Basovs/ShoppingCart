@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://use.typekit.net/feh8ahd.css" />
+        <title>Store</title>
+    </head>
+    <body>
+        <h1>Arbeta med constructor</h1>
+        <script>
+            /*
+            function User(name, birthday) {
+                //OBS privat egenskap (Skydda datan - incapsulation)
+
+
+                //Public egenskap
+                this.name = name
+
+                //Public Metoder
+                this.sayHi = function() {
+                    return (
+                        "Hello " + name + ". You r " + calcAge() + " years old."
+                    )
+                }
+
+
+                //Privata Metoder utan '.this' framför
+                function calcAge() {
+                    let birthDate = new Date()
+                    let thisYear = birthDate.getFullYear()
+                    let userYear = new Date(birthday).getFullYear()
+
+                    return thisYear - userYear
+                }
+            }
+            // Skapa object
+            let user1 = new User("Janis", "1989 10 02")
+            //Public egenskap
+            console.log(user1.name) //Janis
+            //Public egenskap kan ändras
+            user1.name = "Paula"
+            console.log(user1.name) //Paula
+
+            console.log(user1.sayHi()) //Hello Janis
+
+            user1.sayHi()
+            */
+
+            function User(name, birthday) {
+                function calcAge() {
+                    let birthDate = new Date(birthday)
+                    return new Date().getFullYear() - birthDate.getFullYear()
+                }
+                //Skapat upp publika egenskaper
+                this.name = name
+                this.birthday = birthday
+
+                this.sayHi = function() {
+                    return `Hello ${name}, age: ${calcAge()}`
+                }
+
+                //Konverterar metoden till public
+                this.calcAge = function() {
+                    let birthDate = new Date(birthday)
+                    return new Date().getFullYear() - birthDate.getFullYear()
+                }
+            }
+            //Skapa objekt att testa med
+            const user1 = new User("Janis", "1989 10 02")
+            const user2 = new User("Paula", "1993 10 22")
+
+            console.log(user1.calcAge())
+            console.log(user2.calcAge())
+        </script>
+    </body>
+</html>

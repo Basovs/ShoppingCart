@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://use.typekit.net/feh8ahd.css" />
+        <title>Store</title>
+    </head>
+    <body>
+        <h1>Arbeta med constructor</h1>
+        <script>
+            function MyMath(firstPoint, secondPoint) {
+                //Skapat upp publika egenskaper
+                this.firstPoint = firstPoint
+                this.secondPoint = secondPoint
+            }
+
+            MyMath.prototype.calcDistance = function() {
+                let resault = Math.SQRT2((x - x) ** 2 + (y - y) ** 2)
+                return resault
+            }
+
+            const point1 = "0, 0"
+
+            //Skapa objekt att testa med
+            const try1 = new MyMath(0, 0)
+            const try2 = new MyMath(2, 2)
+
+            console.log(firstTry.calcDistance())
+            // console.log(secondTry.calcDistance())
+        </script>
+    </body>
+</html>
