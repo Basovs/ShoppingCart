@@ -135,6 +135,12 @@ for (let i = 0; i < productCount; i++) {
         //Logiken Varukorg
         console.log(this.parentNode.childNodes[3].childNodes[1].textContent)
 
+        //Total price in cart
+        const totalProductprice = document.createElement("p")
+        totalProductprice.className = "totalProductprice"
+        totalProductprice.textContent = countBtnCount.textContent * 15
+        productInCart.appendChild(totalProductprice)
+
         priceCart = 15
         countCart = countBtnCount.textContent
         countBtnPlus.addEventListener("click", function() {
@@ -142,6 +148,7 @@ for (let i = 0; i < productCount; i++) {
 
             countBtnCount.textContent = countCart -= 1
             countBtnCount.textContent = countCart += 2
+            totalProductprice.textContent = countBtnCount.textContent * 15
             console.log(countCart)
 
             // totalProductprice.textContent = priceCart * countCart
@@ -149,12 +156,8 @@ for (let i = 0; i < productCount; i++) {
         countBtnMinus.addEventListener("click", function() {
             // console.log(countCart)
             countBtnCount.textContent = countCart -= 1
+            totalProductprice.textContent = countBtnCount.textContent * 15
         })
-
-        const totalProductprice = document.createElement("p")
-        totalProductprice.className = "totalProductprice"
-        totalProductprice.textContent = 15
-        productInCart.appendChild(totalProductprice)
 
         const deleteBtn = document.createElement("button")
         deleteBtn.className = "deleteBtn"
