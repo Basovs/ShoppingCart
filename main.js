@@ -29,6 +29,24 @@ const shoppigCartConainer = document.createElement("div")
 shoppigCartConainer.className = "shoppingCartContainer"
 shoppigCart.appendChild(shoppigCartConainer)
 
+const closeBtn = document.createElement("button")
+closeBtn.className = "closeBtn"
+closeBtn.textContent = "X"
+shoppigCartConainer.appendChild(closeBtn)
+closeBtn.addEventListener("click", function() {
+  shoppigCart.classList.remove("displayFlex")
+})
+
+const buyBtn = document.createElement("button")
+buyBtn.className = "buyBtn"
+buyBtn.textContent = "Beställ"
+buyBtn.href = "kvitto.html"
+shoppigCartConainer.appendChild(buyBtn)
+//Logiken
+/*buyBtn.addEventListener("click", function() {
+    shoppigCart.classList.add("displayFlex")
+})*/
+
 // Product template in cart
 
 //Product container
@@ -99,6 +117,7 @@ for (let i = 0; i < productCount; i++) {
         const productInCartImgWrapper = document.createElement("div")
         productInCartImgWrapper.className = "productInCartImgWrapper"
         productInCart.appendChild(productInCartImgWrapper)
+
         //Logiken
         productInCartImgWrapper.addEventListener("click", function() {
             shoppigCart.classList.remove("displayFlex")
@@ -174,6 +193,7 @@ for (let i = 0; i < productCount; i++) {
         alert('Du måste välja antal produkter')
       }
     })
+
 
     productContainer.appendChild(product)
 
