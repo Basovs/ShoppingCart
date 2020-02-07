@@ -101,7 +101,6 @@ for (let i = 0; i < productCount; i++) {
         //Logiken
         productInCartImgWrapper.addEventListener("click", function() {
             shoppigCart.classList.remove("displayFlex")
-            //Lol
         })
 
         const productInCartImgWrapperImg = document.createElement("img")
