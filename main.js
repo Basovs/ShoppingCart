@@ -89,71 +89,75 @@ for (let i = 0; i < productCount; i++) {
     product.appendChild(addBtn)
     //Logiken för att lägga in produkter i varukorgen på klick
     addBtn.addEventListener("click", function() {
-        console.log(this.parentNode)
-
-        const productInCart = document.createElement("div")
-        productInCart.className = "productInCart"
-        shoppigCartConainer.appendChild(productInCart)
-
-        const productInCartImgWrapper = document.createElement("div")
-        productInCartImgWrapper.className = "productInCartImgWrapper"
-        productInCart.appendChild(productInCartImgWrapper)
-        //Logiken
-        productInCartImgWrapper.addEventListener("click", function() {
-            shoppigCart.classList.remove("displayFlex")
-        })
-
-        const productInCartImgWrapperImg = document.createElement("img")
-        productInCartImgWrapperImg.className = "productInCartImgWrapperImg"
-        productInCartImgWrapperImg.src = this.parentNode.firstChild.firstChild.src
-        productInCartImgWrapper.appendChild(productInCartImgWrapperImg)
-
-        const productInCartName = document.createElement("h3")
-        productInCartName.className = "productInCartName"
-        productInCartName.textContent = this.parentNode.childNodes[1].textContent
-        productInCart.appendChild(productInCartName)
-
-        const countBtn = document.createElement("div")
-        countBtn.className = "countBtn"
-        productInCart.appendChild(countBtn)
-
-        const countBtnMinus = document.createElement("button")
-        countBtnMinus.className = "countBtnMinus"
-        countBtnMinus.textContent = "-"
-        countBtn.appendChild(countBtnMinus)
-
-        const countBtnCount = document.createElement("p")
-        countBtnCount.className = "countBtnCount"
-        countBtnCount.textContent = this.parentNode.childNodes[3].childNodes[1].textContent
-        countBtn.appendChild(countBtnCount)
-
-        const countBtnPlus = document.createElement("button")
-        countBtnPlus.className = "countBtnPlus"
-        countBtnPlus.textContent = "+"
-        countBtn.appendChild(countBtnPlus)
-
-        //Logiken Varukorg
-        priceCart = 15
-        countCart = this.parentNode.childNodes[3].childNodes[1].textContent
-        countBtnPlus.addEventListener("click", function() {
-            // console.log(countCart)
-            totalProductprice.textContent = priceCart * countCart
-            countBtnCount.textContent = countCart += 1
-        })
-        countBtnMinus.addEventListener("click", function() {
-            // console.log(countCart)
-            countBtnCount.textContent = countCart -= 1
-        })
-
-        const totalProductprice = document.createElement("p")
-        totalProductprice.className = "totalProductprice"
-        totalProductprice.textContent = 15
-        productInCart.appendChild(totalProductprice)
-
-        const deleteBtn = document.createElement("button")
-        deleteBtn.className = "deleteBtn"
-        deleteBtn.textContent = "X"
-        productInCart.appendChild(deleteBtn)
+        if (count > 0) {
+          console.log(this.parentNode)
+  
+          const productInCart = document.createElement("div")
+          productInCart.className = "productInCart"
+          shoppigCartConainer.appendChild(productInCart)
+  
+          const productInCartImgWrapper = document.createElement("div")
+          productInCartImgWrapper.className = "productInCartImgWrapper"
+          productInCart.appendChild(productInCartImgWrapper)
+          //Logiken
+          productInCartImgWrapper.addEventListener("click", function() {
+              shoppigCart.classList.remove("displayFlex")
+          })
+  
+          const productInCartImgWrapperImg = document.createElement("img")
+          productInCartImgWrapperImg.className = "productInCartImgWrapperImg"
+          productInCartImgWrapperImg.src = this.parentNode.firstChild.firstChild.src
+          productInCartImgWrapper.appendChild(productInCartImgWrapperImg)
+  
+          const productInCartName = document.createElement("h3")
+          productInCartName.className = "productInCartName"
+          productInCartName.textContent = this.parentNode.childNodes[1].textContent
+          productInCart.appendChild(productInCartName)
+  
+          const countBtn = document.createElement("div")
+          countBtn.className = "countBtn"
+          productInCart.appendChild(countBtn)
+  
+          const countBtnMinus = document.createElement("button")
+          countBtnMinus.className = "countBtnMinus"
+          countBtnMinus.textContent = "-"
+          countBtn.appendChild(countBtnMinus)
+  
+          const countBtnCount = document.createElement("p")
+          countBtnCount.className = "countBtnCount"
+          countBtnCount.textContent = this.parentNode.childNodes[3].childNodes[1].textContent
+          countBtn.appendChild(countBtnCount)
+  
+          const countBtnPlus = document.createElement("button")
+          countBtnPlus.className = "countBtnPlus"
+          countBtnPlus.textContent = "+"
+          countBtn.appendChild(countBtnPlus)
+  
+          //Logiken Varukorg
+          priceCart = 15
+          countCart = this.parentNode.childNodes[3].childNodes[1].textContent
+          countBtnPlus.addEventListener("click", function() {
+              // console.log(countCart)
+              totalProductprice.textContent = priceCart * countCart
+              countBtnCount.textContent = countCart += 1
+          })
+          countBtnMinus.addEventListener("click", function() {
+              // console.log(countCart)
+              if(countCart > 1) {
+                countBtnCount.textContent = countCart -= 1
+              }
+          })
+  
+          const totalProductprice = document.createElement("p")
+          totalProductprice.className = "totalProductprice"
+          totalProductprice.textContent = 15
+          productInCart.appendChild(totalProductprice)
+  
+          const deleteBtn = document.createElement("button")
+          deleteBtn.className = "deleteBtn"
+          deleteBtn.textContent = "X"
+          productInCart.appendChild(deleteBtn)
+        }
     })
 
     productContainer.appendChild(product)
@@ -165,6 +169,7 @@ for (let i = 0; i < productCount; i++) {
     })
     minus.addEventListener("click", function() {
         console.log("minus")
+        if(count > 0)
         countText.textContent = count -= 1
     })
 }
