@@ -2,14 +2,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+
+    font-family: neo-sans, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 .kvittoContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    inline-size: 50%;
     block-size: 70vh;
-    background-color: red;
-    padding: 20px;
+    inline-size: 600px;
+    background-color: #f0f0f0;
+    border: 15px solid #f0f0f0;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px 0px rgba(0, 0, 0, 0.3),
+        inset -6px -6px 6px 0px rgba(255, 255, 255, 1),
+        6px 6px 6px 0px rgba(0, 0, 0, 0.3),
+        -6px -6px 6px 0px rgba(255, 255, 255, 1);
 }
