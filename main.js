@@ -89,6 +89,7 @@ for (let i = 0; i < productCount; i++) {
     product.appendChild(addBtn)
     //Logiken för att lägga in produkter i varukorgen på klick
     addBtn.addEventListener("click", function() {
+      if (count > 0) {
         // console.log(this.parentNode)
 
         const productInCart = document.createElement("div")
@@ -155,8 +156,10 @@ for (let i = 0; i < productCount; i++) {
         })
         countBtnMinus.addEventListener("click", function() {
             // console.log(countCart)
-            countBtnCount.textContent = countCart -= 1
-            totalProductprice.textContent = countBtnCount.textContent * 15
+            if (countCart > 1) {
+              countBtnCount.textContent = countCart -= 1
+              totalProductprice.textContent = countBtnCount.textContent * 15
+            }
         })
 
         const deleteBtn = document.createElement("button")
@@ -167,6 +170,9 @@ for (let i = 0; i < productCount; i++) {
         deleteBtn.addEventListener("click", function() {
             this.parentNode.remove()
         })
+      } else {
+        alert('Du måste välja antal produkter')
+      }
     })
 
     productContainer.appendChild(product)
@@ -176,7 +182,9 @@ for (let i = 0; i < productCount; i++) {
         // price.textContent = price * count
     })
     minus.addEventListener("click", function() {
+      if(count > 0) {
         countText.textContent = count -= 1
+      }
     })
 }
 
