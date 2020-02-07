@@ -157,6 +157,8 @@ for (let i = 0; i < productCount; i++) {
           deleteBtn.className = "deleteBtn"
           deleteBtn.textContent = "X"
           productInCart.appendChild(deleteBtn)
+        }else {
+          alert('Du måste välja ett antal produkter')
         }
     })
 
