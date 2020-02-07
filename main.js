@@ -181,6 +181,7 @@ for (let i = 0; i < productCount; i++) {
 const productsImg = document.querySelectorAll(".product img")
 const productsName = document.querySelectorAll(".product h1")
 const productsPrice = document.querySelectorAll(".product h3")
+
 //JSON handler
 fetch("product.json")
     .then(response => {
