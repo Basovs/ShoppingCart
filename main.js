@@ -89,6 +89,8 @@ for (let i = 0; i < productCount; i++) {
     product.appendChild(addBtn)
     //Logiken för att lägga in produkter i varukorgen på klick
     addBtn.addEventListener("click", function() {
+        console.log(this.parentNode)
+
         const productInCart = document.createElement("div")
         productInCart.className = "productInCart"
         shoppigCartConainer.appendChild(productInCart)
@@ -103,13 +105,12 @@ for (let i = 0; i < productCount; i++) {
 
         const productInCartImgWrapperImg = document.createElement("img")
         productInCartImgWrapperImg.className = "productInCartImgWrapperImg"
-        productInCartImgWrapperImg.src =
-            "https://images.unsplash.com/photo-1566719835718-56b15f742ae0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000"
+        productInCartImgWrapperImg.src = this.parentNode.firstChild.firstChild.src
         productInCartImgWrapper.appendChild(productInCartImgWrapperImg)
 
         const productInCartName = document.createElement("h3")
         productInCartName.className = "productInCartName"
-        productInCartName.textContent = "Name"
+        productInCartName.textContent = this.parentNode.childNodes[1].textContent
         productInCart.appendChild(productInCartName)
 
         const countBtn = document.createElement("div")
@@ -123,7 +124,7 @@ for (let i = 0; i < productCount; i++) {
 
         const countBtnCount = document.createElement("p")
         countBtnCount.className = "countBtnCount"
-        countBtnCount.textContent = 1
+        countBtnCount.textContent = this.parentNode.childNodes[3].childNodes[1].textContent
         countBtn.appendChild(countBtnCount)
 
         const countBtnPlus = document.createElement("button")
@@ -133,7 +134,7 @@ for (let i = 0; i < productCount; i++) {
 
         //Logiken Varukorg
         priceCart = 15
-        countCart = 1
+        countCart = this.parentNode.childNodes[3].childNodes[1].textContent
         countBtnPlus.addEventListener("click", function() {
             // console.log(countCart)
             totalProductprice.textContent = priceCart * countCart
