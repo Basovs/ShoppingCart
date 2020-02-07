@@ -37,7 +37,7 @@ closeBtn.addEventListener("click", function() {
   shoppigCart.classList.remove("displayFlex")
 })
 
-const buyBtn = document.createElement("button")
+const buyBtn = document.createElement("a")
 buyBtn.className = "buyBtn"
 buyBtn.textContent = "Beställ"
 buyBtn.href = "kvitto.html"
