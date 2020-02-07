@@ -75,7 +75,7 @@ for (let i = 0; i < productCount; i++) {
     let count = 0
     let countText = document.createElement("p")
     countText.className = "countContainer__count"
-    countText.textContent = count + " st."
+    countText.innerText = count
     countContainer.appendChild(countText)
 
     const plus = document.createElement("button")
@@ -89,7 +89,7 @@ for (let i = 0; i < productCount; i++) {
     product.appendChild(addBtn)
     //Logiken för att lägga in produkter i varukorgen på klick
     addBtn.addEventListener("click", function() {
-        console.log(this.parentNode)
+        // console.log(this.parentNode)
 
         const productInCart = document.createElement("div")
         productInCart.className = "productInCart"
@@ -124,7 +124,7 @@ for (let i = 0; i < productCount; i++) {
 
         const countBtnCount = document.createElement("p")
         countBtnCount.className = "countBtnCount"
-        countBtnCount.textContent = this.parentNode.childNodes[3].childNodes[1].textContent
+        countBtnCount.textContent = count
         countBtn.appendChild(countBtnCount)
 
         const countBtnPlus = document.createElement("button")
@@ -133,12 +133,18 @@ for (let i = 0; i < productCount; i++) {
         countBtn.appendChild(countBtnPlus)
 
         //Logiken Varukorg
+        console.log(this.parentNode.childNodes[3].childNodes[1].textContent)
+
         priceCart = 15
-        countCart = this.parentNode.childNodes[3].childNodes[1].textContent
+        countCart = countBtnCount.textContent
         countBtnPlus.addEventListener("click", function() {
             // console.log(countCart)
-            totalProductprice.textContent = priceCart * countCart
-            countBtnCount.textContent = countCart += 1
+
+            countBtnCount.textContent = countCart -= 1
+            countBtnCount.textContent = countCart += 2
+            console.log(countCart)
+
+            // totalProductprice.textContent = priceCart * countCart
         })
         countBtnMinus.addEventListener("click", function() {
             // console.log(countCart)
@@ -154,6 +160,10 @@ for (let i = 0; i < productCount; i++) {
         deleteBtn.className = "deleteBtn"
         deleteBtn.textContent = "X"
         productInCart.appendChild(deleteBtn)
+        //Logiken
+        deleteBtn.addEventListener("click", function() {
+            this.parentNode.remove()
+        })
     })
 
     productContainer.appendChild(product)
@@ -161,10 +171,8 @@ for (let i = 0; i < productCount; i++) {
     plus.addEventListener("click", function() {
         countText.textContent = count += 1
         // price.textContent = price * count
-        console.log("plus")
     })
     minus.addEventListener("click", function() {
-        console.log("minus")
         countText.textContent = count -= 1
     })
 }
