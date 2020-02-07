@@ -9,12 +9,18 @@ body.appendChild(wrapper)
 const nav = document.createElement("nav")
 nav.className = "nav"
 body.prepend(nav)
+
+//ShoppingcartBtn template
 const cartBtn = document.createElement("button")
 cartBtn.className = "cartBtn"
 cartBtn.textContent = "Varukorg"
 nav.appendChild(cartBtn)
+//Logiken
+cartBtn.addEventListener("click", function() {
+    shoppigCart.classList.add("displayFlex")
+})
 
-//ShoppingcartBtn template
+//ShoppingCart
 const shoppigCart = document.createElement("div")
 shoppigCart.className = "shoppingCart"
 body.appendChild(shoppigCart)
@@ -24,158 +30,146 @@ shoppigCartConainer.className = "shoppingCartContainer"
 shoppigCart.appendChild(shoppigCartConainer)
 
 // Product template in cart
-const productInCart = document.createElement("div")
-productInCart.className = "productInCart"
-shoppigCartConainer.appendChild(productInCart)
-
-const productInCartImgWrapper = document.createElement("div")
-productInCartImgWrapper.className = "productInCartImgWrapper"
-productInCart.appendChild(productInCartImgWrapper)
-
-const productInCartImgWrapperImg = document.createElement("img")
-productInCartImgWrapperImg.className = "productInCartImgWrapperImg"
-productInCartImgWrapperImg.src =
-    "https://images.unsplash.com/photo-1566719835718-56b15f742ae0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1000"
-productInCartImgWrapper.appendChild(productInCartImgWrapperImg)
-
-const productInCartName = document.createElement("h3")
-productInCartName.className = "productInCartName"
-productInCartName.textContent = "Name"
-productInCart.appendChild(productInCartName)
-
-const countBtn = document.createElement("div")
-countBtn.className = "countBtn"
-productInCart.appendChild(countBtn)
-
-const countBtnMinus = document.createElement("button")
-countBtnMinus.className = "countBtnMinus"
-countBtnMinus.textContent = "-"
-countBtn.appendChild(countBtnMinus)
-
-const countBtnCount = document.createElement("p")
-countBtnCount.className = "countBtnCount"
-countBtnCount.textContent = 0 
-countBtn.appendChild(countBtnCount)
-
-const countBtnPlus = document.createElement("button")
-countBtnPlus.className = "countBtnPlus"
-countBtnPlus.textContent = "+"
-countBtn.appendChild(countBtnPlus)
-
-//Logiken
-countCart = 1
-countBtnPlus.addEventListener("click", function() {
-    console.log(countCart)
-    return (countBtnCount.textContent = countCart ++)
-})
-console.log(countCart)
-countBtnMinus.addEventListener("click", function() {
-    console.log(countCart)
-    if (countBtnCount.textContent > 0){
-      return (countBtnCount.textContent = countCart --)
-
-    }
-})
-
-const totalProductprice = document.createElement("p")
-totalProductprice.className = "totalProductprice"
-totalProductprice.textContent = "total pris"
-productInCart.appendChild(totalProductprice)
-
-const deleteBtn = document.createElement("button")
-deleteBtn.className = "deleteBtn"
-deleteBtn.textContent = "X"
-productInCart.appendChild(deleteBtn)
 
 //Product container
 const productContainer = document.createElement("div")
 productContainer.className = "productContainer"
 wrapper.appendChild(productContainer)
 
-//Product template
-const product = document.createElement("div")
-product.className = "product"
-
-const imgWrapper = document.createElement("div")
-imgWrapper.className = "productImgWrapper"
-product.appendChild(imgWrapper)
-
-const img = document.createElement("img")
-img.className = "productImgWrapper__img"
-// img.src = "https://source.unsplash.com/1000x900/?food, purple"
-imgWrapper.appendChild(img)
-
-const name = document.createElement("h1")
-name.className = "productName"
-//name.textContent = "Name"
-product.appendChild(name)
-
-const price = document.createElement("h3")
-price.className = "productPrice"
-price.textContent = "99.9€"
-product.appendChild(price)
-
-//Count picker template
-const countContainer = document.createElement("div")
-countContainer.className = "countContainer"
-product.appendChild(countContainer)
-
-const minus = document.createElement("button")
-minus.className = "countContainer__minus"
-minus.textContent = "-"
-countContainer.appendChild(minus)
-
-let count = document.createElement("p")
-count.className = "countContainer__count"
-count.textContent = 1
-countContainer.appendChild(count)
-
-const plus = document.createElement("button")
-plus.className = "countContainer__plus"
-plus.textContent = "+"
-countContainer.appendChild(plus)
-
-// Funktionalitet
-let counter = 0
-
-document.querySelector(countContainer__minus).minus.addEventListener("click", function() {
-    return (count.textContent = counter --)
-});
-plus.addEventListener("click", function() {
-    console.log(counter)
-    if (count.textContent > 0){
-      return (count.textContent = counter ++)
-    }
-});
-
-/*$(document).ready(function(){
-  $(".countContainer__minus").click(function(){
-    counter --;
-    console.log(counter);
-  });
-  $(".countContainer__plus").click(function(){
-    counter ++;
-    console.log(counter);
-  });
-});*/
-
-
-const addBtn = document.createElement("button")
-addBtn.className = "addBtn"
-addBtn.textContent = "Lägg till i varukorg"
-product.appendChild(addBtn)
-
-//funktionalitet
-/*document.querySelector("addBtn").addEventListener("click", function() {
-  console.log('Varukorg')
-})*/
-
+const pricee = 15
+let productCount = 12
 //Clonar produkter
-for (let i = 0; i < 12; i++) {
-    const cloneProduct = product.cloneNode(true)
-    productContainer.appendChild(cloneProduct)
+for (let i = 0; i < productCount; i++) {
+    //Product template
+    const product = document.createElement("div").cloneNode(true)
+    product.className = "product"
+
+    const imgWrapper = document.createElement("div")
+    imgWrapper.className = "productImgWrapper"
+    product.appendChild(imgWrapper)
+
+    const img = document.createElement("img")
+    img.className = "productImgWrapper__img"
+    // img.src = "https://source.unsplash.com/1000x900/?food, purple"
+    imgWrapper.appendChild(img)
+
+    const name = document.createElement("h1")
+    name.className = "productName"
+    //name.textContent = "Name"
+    product.appendChild(name)
+
+    const price = document.createElement("h3")
+    price.className = "productPrice"
+    // price.textContent = "99.9€"
+    product.appendChild(price)
+
+    //Count picker template
+    const countContainer = document.createElement("div")
+    countContainer.className = "countContainer"
+    product.appendChild(countContainer)
+    const minus = document.createElement("button")
+    minus.className = "countContainer__minus"
+    minus.textContent = "-"
+    countContainer.appendChild(minus)
+
+    let count = 0
+    let countText = document.createElement("p")
+    countText.className = "countContainer__count"
+    countText.textContent = count + " st."
+    countContainer.appendChild(countText)
+
+    const plus = document.createElement("button")
+    plus.className = "countContainer__plus"
+    plus.textContent = "+"
+    countContainer.appendChild(plus)
+
+    const addBtn = document.createElement("button")
+    addBtn.className = "addBtn"
+    addBtn.textContent = "Lägg till i varukorg"
+    product.appendChild(addBtn)
+    //Logiken för att lägga in produkter i varukorgen på klick
+    addBtn.addEventListener("click", function() {
+        console.log(this.parentNode)
+
+        const productInCart = document.createElement("div")
+        productInCart.className = "productInCart"
+        shoppigCartConainer.appendChild(productInCart)
+
+        const productInCartImgWrapper = document.createElement("div")
+        productInCartImgWrapper.className = "productInCartImgWrapper"
+        productInCart.appendChild(productInCartImgWrapper)
+        //Logiken
+        productInCartImgWrapper.addEventListener("click", function() {
+            shoppigCart.classList.remove("displayFlex")
+        })
+
+        const productInCartImgWrapperImg = document.createElement("img")
+        productInCartImgWrapperImg.className = "productInCartImgWrapperImg"
+        productInCartImgWrapperImg.src = this.parentNode.firstChild.firstChild.src
+        productInCartImgWrapper.appendChild(productInCartImgWrapperImg)
+
+        const productInCartName = document.createElement("h3")
+        productInCartName.className = "productInCartName"
+        productInCartName.textContent = this.parentNode.childNodes[1].textContent
+        productInCart.appendChild(productInCartName)
+
+        const countBtn = document.createElement("div")
+        countBtn.className = "countBtn"
+        productInCart.appendChild(countBtn)
+
+        const countBtnMinus = document.createElement("button")
+        countBtnMinus.className = "countBtnMinus"
+        countBtnMinus.textContent = "-"
+        countBtn.appendChild(countBtnMinus)
+
+        const countBtnCount = document.createElement("p")
+        countBtnCount.className = "countBtnCount"
+        countBtnCount.textContent = this.parentNode.childNodes[3].childNodes[1].textContent
+        countBtn.appendChild(countBtnCount)
+
+        const countBtnPlus = document.createElement("button")
+        countBtnPlus.className = "countBtnPlus"
+        countBtnPlus.textContent = "+"
+        countBtn.appendChild(countBtnPlus)
+
+        //Logiken Varukorg
+        priceCart = 15
+        countCart = this.parentNode.childNodes[3].childNodes[1].textContent
+        countBtnPlus.addEventListener("click", function() {
+            // console.log(countCart)
+            totalProductprice.textContent = priceCart * countCart
+            countBtnCount.textContent = countCart += 1
+        })
+        countBtnMinus.addEventListener("click", function() {
+            // console.log(countCart)
+            countBtnCount.textContent = countCart -= 1
+        })
+
+        const totalProductprice = document.createElement("p")
+        totalProductprice.className = "totalProductprice"
+        totalProductprice.textContent = 15
+        productInCart.appendChild(totalProductprice)
+
+        const deleteBtn = document.createElement("button")
+        deleteBtn.className = "deleteBtn"
+        deleteBtn.textContent = "X"
+        productInCart.appendChild(deleteBtn)
+    })
+
+    productContainer.appendChild(product)
+
+    plus.addEventListener("click", function() {
+        countText.textContent = count += 1
+        // price.textContent = price * count
+        console.log("plus")
+    })
+    minus.addEventListener("click", function() {
+        console.log("minus")
+        countText.textContent = count -= 1
+    })
 }
 
+//Json handler
 const productsImg = document.querySelectorAll(".product img")
 const productsName = document.querySelectorAll(".product h1")
 const productsPrice = document.querySelectorAll(".product h3")

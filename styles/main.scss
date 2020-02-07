@@ -39,7 +39,6 @@ body {
     }
 }
 .shoppingCart {
-    //display: flex;
     display: none;
     justify-content: center;
     align-items: center;
@@ -122,6 +121,9 @@ body {
             }
         }
     }
+}
+.displayFlex {
+    display: flex;
 }
 .productContainer {
     display: grid;
