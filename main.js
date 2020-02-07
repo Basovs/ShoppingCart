@@ -54,7 +54,7 @@ countBtn.appendChild(countBtnMinus)
 
 const countBtnCount = document.createElement("p")
 countBtnCount.className = "countBtnCount"
-countBtnCount.textContent = 0
+countBtnCount.textContent = 0 
 countBtn.appendChild(countBtnCount)
 
 const countBtnPlus = document.createElement("button")
@@ -63,15 +63,18 @@ countBtnPlus.textContent = "+"
 countBtn.appendChild(countBtnPlus)
 
 //Logiken
-countCart = 0
+countCart = 1
 countBtnPlus.addEventListener("click", function() {
     console.log(countCart)
-    return (countBtnCount.textContent = countCart += 1)
+    return (countBtnCount.textContent = countCart ++)
 })
 console.log(countCart)
 countBtnMinus.addEventListener("click", function() {
     console.log(countCart)
-    return (countBtnCount.textContent = countCart -= 1)
+    if (countBtnCount.textContent > 0){
+      return (countBtnCount.textContent = countCart --)
+
+    }
 })
 
 const totalProductprice = document.createElement("p")
@@ -116,49 +119,67 @@ product.appendChild(price)
 const countContainer = document.createElement("div")
 countContainer.className = "countContainer"
 product.appendChild(countContainer)
+
 const minus = document.createElement("button")
 minus.className = "countContainer__minus"
 minus.textContent = "-"
 countContainer.appendChild(minus)
+
 let count = document.createElement("p")
-let counter = 0
 count.className = "countContainer__count"
-count.textContent = counter + " st."
+count.textContent = 1
 countContainer.appendChild(count)
+
 const plus = document.createElement("button")
 plus.className = "countContainer__plus"
 plus.textContent = "+"
 countContainer.appendChild(plus)
-document.addEventListener
-function demo() {
-    mm = "kalle"
-    console.log(mm)
-}
-demo()
-console.log(mm)
+
+// Funktionalitet
+let counter = 0
+
+document.querySelector(countContainer__minus).minus.addEventListener("click", function() {
+    return (count.textContent = counter --)
+});
+plus.addEventListener("click", function() {
+    console.log(counter)
+    if (count.textContent > 0){
+      return (count.textContent = counter ++)
+    }
+});
+
 /*$(document).ready(function(){
   $(".countContainer__minus").click(function(){
     counter --;
-    alert(counter);
+    console.log(counter);
   });
   $(".countContainer__plus").click(function(){
     counter ++;
-    alert(counter);
+    console.log(counter);
   });
 });*/
+
+
 const addBtn = document.createElement("button")
 addBtn.className = "addBtn"
 addBtn.textContent = "Lägg till i varukorg"
 product.appendChild(addBtn)
+
+//funktionalitet
+/*document.querySelector("addBtn").addEventListener("click", function() {
+  console.log('Varukorg')
+})*/
 
 //Clonar produkter
 for (let i = 0; i < 12; i++) {
     const cloneProduct = product.cloneNode(true)
     productContainer.appendChild(cloneProduct)
 }
+
 const productsImg = document.querySelectorAll(".product img")
 const productsName = document.querySelectorAll(".product h1")
 const productsPrice = document.querySelectorAll(".product h3")
+
 //JSON handler
 fetch("product.json")
     .then(response => {
