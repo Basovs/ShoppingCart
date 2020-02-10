@@ -140,7 +140,10 @@ for (let i = 0; i < productCount; i++) {
         }
         //console.log('id: ' + this.parentElement.id)
         //console.log('Antal: ' + this.parentElement.lastChild.previousSibling.firstChild.nextSibling.textContent)
-      
+        this.disabled = true
+        this.previousSibling.lastChild.disabled = true
+        this.previousSibling.firstChild.disabled = true
+
         productArr.push(productObj)
         console.log(productArr)
         localStorage.setItem(`produkt${productId}`, JSON.stringify(productArr))
