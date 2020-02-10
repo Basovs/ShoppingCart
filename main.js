@@ -119,24 +119,31 @@ for (let i = 0; i < productCount; i++) {
     product.appendChild(addBtn)
 
     let productArr = []
+    let productObj = {}
     //Logiken för att lägga in produkter i varukorgen på klick
     addBtn.addEventListener("click", function(e) {
       if (count > 0) {
         // console.log(this.parentNode)
-        let productObj = {
-          productId: this.parentElement.id,
-          productAnt: this.parentElement.lastChild.previousSibling.firstChild.nextSibling.textContent
-          /*productImage: this.parentElement.firstElementChild.firstElementChild.getAttribute('src'),
-          productName: this.parentElement.firstChild.nextSibling.textContent,
-          productPrice: this.parentElement.firstChild.nextSibling.nextSibling.textContent,
-          productAnt: this.parentElement.lastChild.previousSibling.firstChild.nextSibling.textContent*/
+        const productId = this.parentElement.id
+        const productAnt = this.parentElement.lastChild.previousSibling.firstChild.nextSibling.textContent
+        const productImage = this.parentElement.firstElementChild.firstElementChild.getAttribute('src')
+        const productName = this.parentElement.firstChild.nextSibling.textContent
+        const productPrice = this.parentElement.firstChild.nextSibling.nextSibling.textContent
+        console.log(productId)
+        console.log(productAnt)
+        productObj = {
+          productId: productId,
+          productAnt: productAnt,
+          productImage: productImage,
+          productName: productName,
+          productPrice: productPrice 
         }
-        console.log('id: ' + this.parentElement.id)
-        console.log('Antal: ' + this.parentElement.lastChild.previousSibling.firstChild.nextSibling.textContent)
+        //console.log('id: ' + this.parentElement.id)
+        //console.log('Antal: ' + this.parentElement.lastChild.previousSibling.firstChild.nextSibling.textContent)
       
         productArr.push(productObj)
         console.log(productArr)
-        localStorage.setItem('produkt', JSON.stringify(productArr))
+        localStorage.setItem(`produkt${productId}`, JSON.stringify(productArr))
 
         const productInCart = document.createElement("div")
         productInCart.className = "productInCart"
