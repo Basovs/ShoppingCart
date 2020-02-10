@@ -47,6 +47,16 @@ shoppigCartConainer.appendChild(buyBtn)
     shoppigCart.classList.add("displayFlex")
 })*/
 
+const antProducts = document.createElement("h2")
+antProducts.className = "buyBtn"
+antProducts.textContent = "Antal produkter: "
+shoppigCartConainer.appendChild(antProducts)
+
+const totPrice = document.createElement("h2")
+totPrice.className = "buyBtn"
+totPrice.textContent = "Total: "
+shoppigCartConainer.appendChild(totPrice)
+
 // Product template in cart
 
 //Product container
@@ -61,6 +71,7 @@ for (let i = 0; i < productCount; i++) {
     //Product template
     const product = document.createElement("div").cloneNode(true)
     product.className = "product"
+    product.id = i
 
     const imgWrapper = document.createElement("div")
     imgWrapper.className = "productImgWrapper"
@@ -85,6 +96,7 @@ for (let i = 0; i < productCount; i++) {
     const countContainer = document.createElement("div")
     countContainer.className = "countContainer"
     product.appendChild(countContainer)
+
     const minus = document.createElement("button")
     minus.className = "countContainer__minus"
     minus.textContent = "-"
@@ -105,10 +117,26 @@ for (let i = 0; i < productCount; i++) {
     addBtn.className = "addBtn"
     addBtn.textContent = "Lägg till i varukorg"
     product.appendChild(addBtn)
+
+    let productArr = []
     //Logiken för att lägga in produkter i varukorgen på klick
-    addBtn.addEventListener("click", function() {
+    addBtn.addEventListener("click", function(e) {
       if (count > 0) {
         // console.log(this.parentNode)
+        let productObj = {
+          productId: this.parentElement.id,
+          productAnt: this.parentElement.lastChild.previousSibling.firstChild.nextSibling.textContent
+          /*productImage: this.parentElement.firstElementChild.firstElementChild.getAttribute('src'),
+          productName: this.parentElement.firstChild.nextSibling.textContent,
+          productPrice: this.parentElement.firstChild.nextSibling.nextSibling.textContent,
+          productAnt: this.parentElement.lastChild.previousSibling.firstChild.nextSibling.textContent*/
+        }
+        console.log('id: ' + this.parentElement.id)
+        console.log('Antal: ' + this.parentElement.lastChild.previousSibling.firstChild.nextSibling.textContent)
+      
+        productArr.push(productObj)
+        console.log(productArr)
+        localStorage.setItem('produkt', JSON.stringify(productArr))
 
         const productInCart = document.createElement("div")
         productInCart.className = "productInCart"
@@ -153,7 +181,7 @@ for (let i = 0; i < productCount; i++) {
         countBtn.appendChild(countBtnPlus)
 
         //Logiken Varukorg
-        console.log(this.parentNode.childNodes[3].childNodes[1].textContent)
+        //console.log(this.parentNode.childNodes[3].childNodes[1].textContent)
 
         //Total price in cart
         const totalProductprice = document.createElement("p")
@@ -219,12 +247,21 @@ fetch("product.json")
         return response.json()
     })
     .then(myJson => {
+      //localStorage.setItem('data',JSON.stringify(myJson))
+
         for (let i = 0; i < myJson.products.length; i++) {
             //console.log(myJson.products[i].name)
-            productsImg[i].src = myJson.products[i].img
+            let kalle = myJson.products
+            console.log(kalle)
+            productsImg[i].src = myJson.products[i].product.img
             //console.log(productsName)
-            productsName[i].textContent = myJson.products[i].name
+            productsName[i].textContent = myJson.products[i].product.name
             //console.log(productsPrice)
-            productsPrice[i].textContent = myJson.products[i].price
+            productsPrice[i].textContent = myJson.products[i].product.price
         }
     })
+
+    function updateUi(data){
+
+
+    }
